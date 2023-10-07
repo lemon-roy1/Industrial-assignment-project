@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fruit project</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="shortcut icon" href="./images/Summer 1.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.4.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            lato: "'Lato', sans-serif"
+          },
+          colors: {
+            primary: '#F85559',
+            title: '#121212',
+            'dark-1': 'rgba(18, 18, 18, 0.60)',
+            'dark-2': 'rgba(18, 18, 18, 0.80)'
+          }
+        },
+        container: {
+          center: true,
+          padding: {
+            DEFAULT: '1.5rem',
+            md: '2rem',
+            lg: '4rem',
+            xl: '5rem',
+            '2xl': '6rem'
+          }
+        }
+      }
+    }
+  </script>
+  <!--================ Tailwind CSS Customization ======================-->
+  <style type="text/tailwindcss">
+    @layer base {
+      h2, h3 {
+        @apply font-black text-title mb-2;
+      }
+      h2 {
+        @apply text-3xl;
+      }
+      h3 {
+        @apply text-2xl;
+      }
+    }
+    @layer components {
+      .btn-primary {
+        @apply bg-primary border-primary hover:bg-primary hover:border-primary text-white capitalize text-base font-bold;
+      }
+    }
+  </style>
+</head>
+
+<body class="font-lato font-normal text-base text-dark-1">
+
+
+  <main>
+  <!--=============== Banner Start =================-->
+  <section class="w-full bg-[#F9F6E2] px-4 xl:px-0 mx-auto">
+    <div class="max-w-screen-xl mx-auto">
+      <div class="lg:flex items-center justify-between py-[100px]">
+        <div>
+          <h3 class="text-[32px] text-center lg:text-start">--- SALE FEVER ---</h3>
+          <h2 class="lg:text-[58px] text-[30px] xl:w-[600px] font-bold lg:leading-[60px] leading-8 text-center lg:text-start">Purchase TK 200 or above & <span class="text-[#E527B2]">get 20% off</span></h2>
+          <div class="md:flex items-center md:justify-center gap-4 mt-[67px]">
+            <p class="font-[500] text-[24px] text-center md:text-start">Use Promo Code</p>
+            <button class="md:w-[156px] w-[100%] mt-2 md:mt-0 h-[56px] rounded-[8px] bg-[#E527B2] text-white text-[24px] font-[600]" onclick="convertValu()">SELL200</button>
+          </div>
+        </div>
+        <div>
+          <img class="xl:w-[708px] w-[100%] xl:h-[708px] h-[100%]" src="./images/Summer 1.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!--========================= cart start =================================-->
+
+<section class="w-full bg-[#F8F8F8] px-4 xl:px-0 mx-auto">
+  <div class="max-w-screen-xl mx-auto">
+    <div class="md:flex justify-between pb-[100px]">
+      <div>
+        <h2 class="mt-[120px]">fruit product</h2>
+        <div class="grid xl:grid-cols-3 lg:grid-cols-2 gap-6 md:grid-cols-1 mt-[32px]">
+          <div class="w-[290px] h-[320px] bg-[#FFF] text-center py-6 rounded-[8px]">
+           <div class="flex justify-center items-center w-[250px] h-[200px] bg-[#1111110d] mx-auto rounded-[8px]">
+            <img class="w-[100px] h-[135px]" src="./images/fruit1.png" alt="" />
+           </div>
+            <div class="mt-[22px]">
+              <div class="text-yellow-400  flex justify-center">
+                <i class="fa-sharp fa-solid fa-star"></i>
+                <i class="fa-sharp fa-solid fa-star"></i>
+                <i class="fa-sharp fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <p class="font-semibold text-[20px] text-[#111]">Grapes</p>
+              <h6 onclick="handleCLickBtn(this)" class="font-normal text-[20px] text-[#11111180] cursor-pointer">price: 39.00 TK</h6>
+            </div>
+          </div>
+
+          <div class="w-[290px] h-[320px] bg-[#FFF] text-center py-6 rounded-[8px]">
+           <div class="flex justify-center items-center w-[250px] h-[200px] bg-[#1111110d] mx-auto rounded-[8px]">
+            <img class="w-[100px] h-[135px]" src="./images/fruit2.png" alt="" />
+           </div>
+            <div class="mt-[22px]">
+              <div class="text-yellow-400  flex justify-center">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <p class="font-semibold text-[20px] text-[#111]">orange</p>
+              <h6 onclick="handleCLickBtn(this)" class="font-normal text-[20px] text-[#11111180] cursor-pointer">price: 25.00 TK</h6>
+            </div>
+          </div>
+
+          <div class="w-[290px] h-[320px] bg-[#FFF] text-center py-6 rounded-[8px]">
+           <div class="flex justify-center items-center w-[250px] h-[200px] bg-[#1111110d] mx-auto rounded-[8px]">
+            <img class="w-[100px] h-[135px]" src="./images/fruit3.png" alt="" />
+           </div>
+            <div class="mt-[22px]">
+              <div class="text-yellow-400  flex justify-center">
+                <i class="fa-sharp fa-solid fa-star"></i>
+                <i class="fa-sharp fa-solid fa-star"></i>
+                <i class="fa-sharp fa-solid fa-star"></i>
+                <i class="fa-sharp fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+          
+              </div>
+              <p class="font-semibold text-[20px] text-[#111]">PineApple</p>
+              <h6 onclick="handleCLickBtn(this)" class="font-normal text-[20px] text-[#11111180] cursor-pointer">price: 49.00 TK</h6>
+            </div>
+          </div>
+
+               
+          
+        </div>
+        <h2 class="mt-[120px]">Sportswear</h2>
+        <div class="grid xl:grid-cols-3 lg:grid-cols-2 gap-6 md:grid-cols-1 mt-[32px]">
+          <div class="w-[290px] h-[320px] bg-[#FFF] text-center py-6 rounded-[8px]">
+           <div class="flex justify-center items-center w-[250px] h-[200px] bg-[#1111110d] mx-auto rounded-[8px]">
+            <img class="w-[100px] h-[135px]" src="./images/fruit4.png" alt="" />
+           </div>
+            <div class="mt-[22px]">
+              <div class="text-yellow-400  flex justify-center">
+                <i class="fa-sharp fa-solid fa-star"></i>
+                <i class="fa-sharp fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <p class="font-semibold text-[20px] text-[#111]">strawBerry</p>
+              <h6 onclick="handleCLickBtn(this)" class="font-normal text-[20px] text-[#11111180] cursor-pointer">price: 49.00 TK</h6>
+            </div>
+          </div>
+
+          <div class="w-[290px] h-[320px] bg-[#FFF] text-center py-6 rounded-[8px]">
+           <div class="flex justify-center items-center w-[250px] h-[200px] bg-[#1111110d] mx-auto rounded-[8px]">
+            <img class="w-[100px] h-[135px]" src="./images/fruit5.png" alt="" />
+           </div>
+            <div class="mt-[22px]">
+              <div class="text-yellow-400  flex justify-center">
+                <i class="fa-sharp fa-solid fa-star"></i>
+                <i class="fa-sharp fa-solid fa-star"></i>
+                <i class="fa-sharp fa-solid fa-star"></i>
+                <i class="fa-sharp fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <p class="font-semibold text-[20px] text-[#111]">Pomegranate</p>
+              <h6 onclick="handleCLickBtn(this)" class="font-normal text-[20px] text-[#11111180] cursor-pointer">price: 69.00 TK</h6>
+            </div>
+          </div>
+
+          <div class="w-[290px] h-[320px] bg-[#FFF] text-center py-6 rounded-[8px]">
+           <div class="flex justify-center items-center w-[250px] h-[200px] bg-[#1111110d] mx-auto rounded-[8px]">
+            <img class="w-[100px] h-[135px]" src="./images/fruit6.png" alt="" />
+           </div>
+            <div class="mt-[22px]">
+              <div class="text-yellow-400  flex justify-center">
+                <i class="fa-sharp fa-solid fa-star"></i>
+                <i class="fa-sharp fa-solid fa-star"></i>
+                <i class="fa-sharp fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <p class="font-semibold text-[20px] text-[#111]">apple</p>
+              <h6 onclick="handleCLickBtn(this)" class="font-normal text-[20px] text-[#11111180] cursor-pointer">price: 159.00 TK</h6>
+            </div>
+          </div>
+
+          
+          
+        </div>
+      </div>
+  
+    <div class="md:w-[342px] w-[100%] mt-[188px]">
+      <div class=" h-[148px] bg-white flex items-center px-6">
+        <div>
+        <p class="font-medium text-[24px] mb-4">Have coupon?</p>
+          <!-- input value  -->
+        <input id="inputBox" class="md:w-[294px] w-[240px] h-[56px] input_button absolute md:pl-10 pl-3" type="text" placeholder="Coupon code" >
+        <button id="applyButton" disabled onclick="calculateDiscount()" class="relative w-[100px] h-[56px] bg-[#E527B2] text-white md:left-[194px] left-[140px] rounded-r-lg text-[20px] font-semibold">Apply</button>
+       
+      </div>
+      </div>
+      <div class="bg-white mt-6 px-6 pt-6 text-[#111]">
+
+        <!-- summary  cart -->
+        <div class="selected-items text-[24px]  font-medium" id="selected-items">
+
+        </div>
+        
+        <div class="cart-box mt-[22px]">
+          <!-- total price id-->
+          <h6 class="font-medium text-[24px]">Total Price: <span class="text-[18px] font-normal"  type="number" id="total">00</span></h6>
+          <!-- Discount price id -->
+          <h6 class="font-medium text-[24px] my-5">Discount: <span id="discountedBlance" class="text-[18px] font-normal">00</span></h6>
+         <!-- all total price id -->
+          <h5 class="font-medium text-[24px]">Total: <span class="text-[18px] font-normal" id="result">00</span></h5>
+          <hr class="my-6" />
+        </div>
+        <div class="coupon">
+        
+          <div class="wrapper font-semibold text-white md:w-[294px] w-full h-[56px] bg-[#E527B2] rounded-[8px]" id="myButton" disabled >
+            <a class="text-[20px]" href="#demo-modal">Make Purchase</a>
+
+            <!-- model cart-->
+        </div>
+        <div id="demo-modal" class="modal">
+            <div class="modal__content xl:py-[104px] lg:py-[50px] xl:w-[600px] lg:w-[550px] md:w-[500px]">
+             <div class="modal_img">
+              <img class="flex justify-center" src="./images/congo.png" alt="">
+             </div>
+                <h2 class="lg:text-[48px] md:text-[30px] font-bold text-center mt-[40px]">Congratulations</h2>
+                <p class="text-[20px] font-normal text-[#11111180] text-center mt-4">Your Purchase the product</p>
+                <div class="flex justify-center mt-10">
+                  <button class="text-white font-semibold text-[20px] w-[180px] h-[56px] rounded-[8px] bg-[#E527B2]">
+                   <a href="./index.html">Go Home</a>
+                  </button>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+</section>
+
+
+  
+
+
+  </main>
+
+
+
+
+  <script src="./script.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+</body>
+
+</html>
